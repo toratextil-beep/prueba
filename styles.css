@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root {
+  --stone: #EDE9E1;
+  --stone-line: #D8D2C6;
+  --ink: #2B2823;
+  --ink-soft: #6B6660;
+  --white: #FFFFFF;
+  --burgundy: #6B1E2B;
+  --brass: #B08D45;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--stone);
+  color: var(--ink);
+  font-family: 'Work Sans', sans-serif;
+}
+
+.site-header {
+  padding: 28px 40px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--stone-line);
+}
+
+.site-header .mark {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  letter-spacing: 0.02em;
+}
+
+.site-header .tag {
+  font-size: 12px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.product {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 56px 40px 120px;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 64px;
+}
+
+@media (max-width: 860px) {
+  .product { grid-template-columns: 1fr; gap: 40px; padding: 32px 20px 80px; }
+}
+
+/* ---- Visor de la alfombra ---- */
+
+.viewer {
+  position: sticky;
+  top: 32px;
+  align-self: start;
+}
+
+.viewer-frame {
+  background: var(--white);
+  border: 1px solid var(--stone-line);
+  padding: 36px;
+}
+
+.viewer-frame svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.viewer-caption {
+  margin-top: 16px;
+  font-size: 12px;
+  color: var(--ink-soft);
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ---- Panel de detalles ---- */
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+  margin-bottom: 10px;
+}
+
+h1.design-name {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 1.05;
+  margin: 0 0 14px;
+}
+
+.design-description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin-bottom: 40px;
+  max-width: 46ch;
+}
+
+.field-block {
+  margin-bottom: 36px;
+}
+
+.field-block > label.field-title {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 14px;
+}
+
+/* Selector de zona a pintar */
+.zone-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.zone-pill {
+  border: 1px solid var(--stone-line);
+  background: var(--white);
+  padding: 9px 16px;
+  font-size: 13px;
+  cursor: pointer;
+  font-family: 'Work Sans', sans-serif;
+  transition: border-color .15s ease, background .15s ease;
+}
+
+.zone-pill.active {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--white);
+}
+
+/* Swatches de color */
+.swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.swatch {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.08);
+  cursor: pointer;
+  position: relative;
+}
+
+.swatch.active::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border: 1.5px solid var(--ink);
+  border-radius: 50%;
+}
+
+/* Tamaños */
+.size-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.size-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--stone-line);
+  background: var(--white);
+  padding: 14px 16px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.size-option.active {
+  border-color: var(--ink);
+}
+
+.size-option .size-price {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+/* Precio */
+.price-block {
+  border-top: 1px solid var(--stone-line);
+  padding-top: 28px;
+  margin-bottom: 32px;
+}
+
+.price-main {
+  font-family: 'Fraunces', serif;
+  font-size: 34px;
+}
+
+.price-sub {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-top: 4px;
+}
+
+/* Métodos de pago */
+.payment-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.payment-tab {
+  flex: 1;
+  border: 1px solid var(--stone-line);
+  background: var(--white);
+  padding: 12px;
+  font-size: 13px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.payment-tab.active {
+  border-color: var(--burgundy);
+  color: var(--burgundy);
+  font-weight: 500;
+}
+
+.payment-detail {
+  border: 1px solid var(--stone-line);
+  background: var(--white);
+  padding: 20px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.payment-detail .row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed var(--stone-line);
+  padding: 6px 0;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+}
+
+.payment-detail .row:last-child { border-bottom: none; }
+
+.payment-note {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+.copy-btn {
+  font-size: 11px;
+  border: 1px solid var(--stone-line);
+  background: var(--stone);
+  padding: 3px 8px;
+  cursor: pointer;
+  margin-left: 8px;
+}

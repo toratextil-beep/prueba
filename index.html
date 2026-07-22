@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo de alfombras</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="mark">TORA, Diseño Textil</div>
+    <div class="tag">Formas</div>
+  </header>
+
+  <main class="product">
+
+    <!-- Columna izquierda: la alfombra en grande -->
+    <section class="viewer">
+      <div class="viewer-frame" id="svg-container">
+        <!-- acá se carga el SVG por código -->
+      </div>
+      <div class="viewer-caption">
+        <span id="caption-name">—</span>
+        <span id="caption-size">—</span>
+      </div>
+    </section>
+
+    <!-- Columna derecha: elección de zona, color, tamaño y precio -->
+    <section class="details">
+      <div class="eyebrow">Tu imaginación hace al diseño final</div>
+      <h1 class="design-name" id="design-name">—</h1>
+      <p class="design-description" id="design-description">—</p>
+
+      <div class="field-block">
+        <label class="field-title">1. Elegí qué parte pintar</label>
+        <div class="zone-pills" id="zone-pills"></div>
+      </div>
+
+      <div class="field-block">
+        <label class="field-title">2. Elegí el color para esa parte</label>
+        <div class="swatches" id="swatches"></div>
+      </div>
+
+      <div class="field-block">
+        <label class="field-title">3. Elegí el tamaño</label>
+        <div class="size-options" id="size-options"></div>
+      </div>
+
+      <div class="price-block">
+        <div class="price-main" id="price-main">$0</div>
+        <div class="price-sub" id="price-sub">Precio de lista</div>
+      </div>
+
+      <div class="field-block">
+        <label class="field-title">4. Medio de pago</label>
+        <div class="payment-tabs" id="payment-tabs">
+          <div class="payment-tab active" data-method="transfer">Transferencia (25% off)</div>
+          <div class="payment-tab" data-method="card">Tarjeta — 3 cuotas Ualá</div>
+        </div>
+        <div class="payment-detail" id="payment-detail"></div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="catalog.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
